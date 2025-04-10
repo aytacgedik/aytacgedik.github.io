@@ -95,7 +95,7 @@ export const Contact: React.FC<{ id?: string }> = ({ id = "contact" }) => {
             className="justify-center px-0 border-none pb-0 mb-4 md:mb-5" 
           />
           <p className="text-base sm:text-lg text-muted-foreground mb-10 md:mb-14 max-w-xl mx-auto leading-relaxed">
-            I'm actively seeking new opportunities and collaborations. Whether
+            I&apos;m actively seeking new opportunities and collaborations. Whether
             you have a question, a project proposal, or just want to connect,
             feel free to reach out!
           </p>

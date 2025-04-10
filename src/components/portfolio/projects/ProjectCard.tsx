@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaLink } from 'react-icons/fa';
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { type ProjectEntry } from "@/types/portfolio";
 import { buttonVariants } from "@/components/ui/button"; 
@@ -9,7 +9,7 @@ import { Code } from "lucide-react";
 
 interface ProjectCardProps {
   project: ProjectEntry;
-  variants?: any; 
+  variants?: Variants; 
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, variants }) => {

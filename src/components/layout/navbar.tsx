@@ -56,14 +56,18 @@ export function Navbar({
   }, []);
 
   useEffect(() => {
+    // --- Start of Effect ---
     if (observer.current) {
       observer.current.disconnect();
     }
     sectionRefs.current.clear();
 
+    // --- Store the observer instance in a local variable AFTER potential creation ---
+    let currentObserver: IntersectionObserver | null = null;
+
     if (pathname === "/") {
       const options = {
-        root: null, // viewport
+        root: null,
         rootMargin: "-40% 0px -60% 0px",
         threshold: 0,
       };
@@ -77,35 +81,40 @@ export function Navbar({
         });
       }, options);
 
+      // --- Assign the created observer to the local variable ---
+      currentObserver = observer.current; // Assign here
+
       navItems.forEach((item) => {
         const sectionId = item.url.startsWith("#")
           ? item.url.substring(1)
           : null;
         if (sectionId) {
           const element = document.getElementById(sectionId);
-          if (element) {
+          if (element && currentObserver) { // Check currentObserver before observing
             sectionRefs.current.set(sectionId, element);
-            observer.current?.observe(element);
+            currentObserver.observe(element); // Use local variable
           }
         }
       });
     }
+    // --- End of Effect Setup ---
 
+
+    // --- Cleanup Function ---
     return () => {
-      if (observer.current) {
-        observer.current.disconnect();
+      // --- Use the local variable `currentObserver` in the cleanup ---
+      if (currentObserver) {
+        currentObserver.disconnect();
       }
-      sectionRefs.current.clear();
+      // You generally don't need to clear sectionRefs.current here,
+      // as it's cleared at the beginning of the next effect run.
+      // sectionRefs.current.clear(); // <- Can usually remove this line from cleanup
     };
-  }, [navItems, pathname]);
+    // --- End of Cleanup Function ---
 
-  const handleMobileMenuToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  }, [navItems, pathname]); // Dependencies remain the same
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+ 
 
   const isLinkActive = (item: NavItem): boolean => {
     const sectionId = item.url.startsWith("#") ? item.url.substring(1) : null;

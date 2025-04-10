@@ -1,4 +1,4 @@
-import { ComponentType } from 'react';
+import { type IconType } from 'react-icons';
 
 // Base Interfaces
 export interface ExperienceEntry {
@@ -10,12 +10,12 @@ export interface ExperienceEntry {
   description: string;
   achievements: string[];
   technologies: string[];
-  icon?: ComponentType<any>;
+  icon?: IconType;
 }
 
 export interface Skill {
   name: string;
-  icon?: ComponentType<any>;
+  icon?: IconType;
 }
 
 export interface SkillCategoryData {
@@ -27,7 +27,7 @@ export interface Certificate {
   name: string;
   issuer?: string;
   url: string | null;
-  icon?: ComponentType<any>;
+  icon?: IconType;
 }
 
 export interface PersonalInfo {
@@ -36,8 +36,8 @@ export interface PersonalInfo {
   location: string;
   pitch: string;
   email: string;
-  linkedin: string; // URL
-  github: string; // URL
+  linkedin: string; 
+  github: string; 
   summary: string;
 }
 
@@ -57,6 +57,6 @@ export interface ProjectEntry {
   technologies: string[];
   details?: string[];
   url?: string;
-  icon?: ComponentType<any>;
+  icon?: IconType;
   src: string;
 }

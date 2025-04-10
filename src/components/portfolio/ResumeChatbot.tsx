@@ -50,7 +50,7 @@ export function ResumeChatbot() {
   
     console.log("Sending to (Placeholder) AI:", trimmedInput)
     setTimeout(() => {
-      let aiResponse = "Feature removed due to API keys security reasons. Please contact me for the full version."
+      const aiResponse = "Feature removed due to API keys security reasons. Please contact me for the full version."
 
       setMessages((prev) => [
         ...prev,
@@ -72,9 +72,9 @@ export function ResumeChatbot() {
         icon={<Bot className="h-6 w-6" />} 
       >
         <ExpandableChatHeader className="flex-col text-center justify-center">
-          <h1 className="text-lg font-semibold">Ask About Aytac's Resume</h1>
+          <h1 className="text-lg font-semibold">Ask About Aytac&apos;s Resume</h1>
           <p className="text-xs text-muted-foreground px-2"> 
-            I can answer questions based on Aytac Gedik's profile.
+            I can answer questions based on Aytac Gedik&apos;s profile.
           </p>
         </ExpandableChatHeader>
 

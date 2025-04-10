@@ -3,7 +3,7 @@
 import { IconArrowLeft, IconArrowRight, IconLink } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export interface ProjectDisplayData {
@@ -32,20 +32,20 @@ export const AnimatedTestimonials = ({
     setRotations(randoms);
   }, [projects]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setActive((prev) => (prev + 1) % projects.length);
-  };
+  }, [projects.length]); 
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setActive((prev) => (prev - 1 + projects.length) % projects.length);
-  };
+  }, [projects.length]); 
 
   useEffect(() => {
     if (autoplay) {
       const interval = setInterval(handleNext, 5000);
       return () => clearInterval(interval);
     }
-  }, [autoplay]);
+  }, [handleNext, autoplay]);
 
   return (
     <div className={cn("max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12 py-20", className)}>

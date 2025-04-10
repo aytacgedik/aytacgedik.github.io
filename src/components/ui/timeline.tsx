@@ -1,6 +1,5 @@
 "use client";
 import {
-  useMotionValueEvent,
   useScroll,
   useTransform,
   motion,
@@ -8,7 +7,6 @@ import {
 import React, { useEffect, useRef, useState } from "react";
 import { SectionHeader } from "../portfolio/SectionHeader";
 import { FaBriefcase } from "react-icons/fa";
-import { personalInfo } from "@/lib/data/portfolio";
 
 interface TimelineEntry {
   title: string;

@@ -1,11 +1,11 @@
 import { SkillCategoryData } from "@/types/portfolio";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion"; 
+import { motion, type Variants } from "framer-motion"; 
 
 interface SkillCategoryCardProps {
   category: SkillCategoryData;
-  variants?: any;
+  variants?: Variants;
 }
 
 export const SkillCategoryCard: React.FC<SkillCategoryCardProps> = ({ category, variants }) => {

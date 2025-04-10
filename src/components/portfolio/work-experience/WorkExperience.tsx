@@ -24,7 +24,7 @@ const prepareTimelineData = (
     content: (
       <div className="bg-card border border-border rounded-lg p-4 sm:p-6">
         <p className="text-sm text-muted-foreground mb-4 text-center sm:text-left">
-          A few projects I've built or contributed to significantly.
+          A few projects I&apos;ve built or contributed to significantly.
         </p>
         <AnimatedTestimonials projects={projectData} autoplay={true} />
       </div>

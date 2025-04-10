@@ -1,13 +1,13 @@
 import React from "react";
 import { FaCertificate as DefaultCertIcon, FaExternalLinkAlt } from 'react-icons/fa';
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { type Certificate } from "@/types/portfolio"; 
 import { buttonVariants } from "@/components/ui/button"; 
 
 interface CertificateItemProps {
   certificate: Certificate;
-  variants?: any; 
+  variants?: Variants; 
 }
 
 export const CertificateItem: React.FC<CertificateItemProps> = ({ certificate: cert, variants }) => {

@@ -1,5 +1,6 @@
 import { personalInfo } from '@/lib/data/portfolio';
 import { FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { type IconType } from 'react-icons';
 
 export const UI_TEXT = {
   viewWork: 'View My Work',
@@ -39,7 +40,7 @@ export const SOCIAL_LINKS_DATA = [
 export interface SocialLinkItem {
     href: string;
     label: string;
-    Icon: React.ComponentType<any>; 
+    Icon: IconType; 
     hoverClass: string;
     testid: string;
 }

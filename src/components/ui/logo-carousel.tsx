@@ -139,5 +139,5 @@ export function LogoCarousel({ columnCount = 2, logos }: LogoCarouselProps) {
     </div>
   )
 }
-
+LogoColumn.displayName = "LogoColumn";
 export { LogoColumn };

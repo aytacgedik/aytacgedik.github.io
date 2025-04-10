@@ -1,12 +1,12 @@
 import React from "react";
 import { FaGraduationCap  } from 'react-icons/fa'; 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { type EducationData } from "@/types/portfolio"; 
 
 interface EducationCardProps {
   education: EducationData;
-  variants?: any; 
+  variants?: Variants; 
 }
 
 export const EducationCard: React.FC<EducationCardProps> = ({ education, variants }) => {

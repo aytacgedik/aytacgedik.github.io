@@ -1,5 +1,5 @@
 import { SkillCategoryData } from '@/types/portfolio'; 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaDatabase, FaMobileAlt, FaBrain, FaPalette, FaCloud, FaShieldAlt, FaProjectDiagram, FaMicrosoft } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaAws, FaDocker, FaDatabase, FaMobileAlt, FaProjectDiagram, FaMicrosoft } from 'react-icons/fa';
 import { SiTypescript, SiDotnet, SiSharp, SiNextdotjs, SiTailwindcss, SiKubernetes, SiPostgresql, SiJest, SiPython, SiGit, SiHtml5, SiJavascript, SiVite, SiCss3, SiRedux, SiGraphql, SiCucumber, SiTensorflow, SiFirebase, SiRedis, SiGooglecloud, SiTerraform, SiApachekafka, SiTestinglibrary, SiOpenai, SiSpacy, SiPlotly, SiPandas, SiScikitlearn, SiAuth0, SiFigma } from 'react-icons/si';
 
 export const skills: SkillCategoryData[] = [

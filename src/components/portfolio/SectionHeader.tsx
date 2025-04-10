@@ -1,9 +1,10 @@
 import React from "react";
 import { cn } from "@/lib/utils";
+import { type IconType } from 'react-icons';
 
 interface SectionHeaderProps {
   title: string;
-  icon?: React.ComponentType<any>;
+  icon?: IconType;
   className?: string;
 }
 
