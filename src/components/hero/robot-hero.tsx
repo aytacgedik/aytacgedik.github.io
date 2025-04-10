@@ -21,6 +21,7 @@ export function HeroSection() {
     };
 
     if ('requestIdleCallback' in window) {
+       window.requestIdleCallback(triggerLoad, { timeout: 2000 }); 
     } else {
       const timerId = setTimeout(triggerLoad, 500); 
       return () => clearTimeout(timerId);
